@@ -88,6 +88,7 @@ API будет доступен по адресу: [http://localhost:8989](http:
 │   │   ├── handlers.go
 │   │   └── routes.go
 │   └── gin_rest/
+│       ├── errs.go
 │       ├── handlers.go
 │       └── routes.go
 ├── errs/
