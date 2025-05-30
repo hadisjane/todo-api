@@ -1,4 +1,4 @@
-package rest
+package pure_rest
 
 import (
 	"encoding/json"

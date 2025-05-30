@@ -1,11 +1,9 @@
 package controllers
 
-import (
-	//"TodoApp/controllers/console"
-	"TodoApp/controllers/rest"
-)
+type IController interface {
+	RunServer()
+}
 
-func Run() {
-	//console.ShowCommands()
-   rest.RunServer()
+func Run(i IController) {
+	i.RunServer()
 }

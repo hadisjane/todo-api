@@ -1,7 +1,11 @@
 package main
 
-import "TodoApp/controllers"
+import (
+	"TodoApp/controllers"
+	"TodoApp/controllers/gin_rest"
+)
 
 func main() {
-	controllers.Run()
+	ginController := gin_rest.GinController{}
+	controllers.Run(ginController)
 }
