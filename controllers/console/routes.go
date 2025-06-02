@@ -4,7 +4,14 @@ import (
 	"fmt"
 )
 
-func ShowCommands() {
+type ConsoleController struct {}
+
+// RunServer implements the IController interface
+func (cc *ConsoleController) RunServer() {
+	cc.ShowCommands()
+}
+
+func (cc *ConsoleController) ShowCommands() {
 	for {
 		fmt.Print(`
 📋 ToDo App - Available Commands:
