@@ -1,4 +1,4 @@
-package gin_rest
+package controller
 
 import (
 	"fmt"
@@ -6,9 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type GinController struct {}
-
-func (g GinController) RunServer() {
+func RunServer() error {
 	r := gin.Default()
 
 	r.GET("/", Ping)
@@ -22,4 +20,5 @@ func (g GinController) RunServer() {
 	if err != nil {
 		fmt.Println("Error running server:", err)
 	}
+	return nil
 }

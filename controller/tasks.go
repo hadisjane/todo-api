@@ -1,8 +1,8 @@
-package gin_rest
+package controller
 
 import (
 	"TodoApp/errs"
-	"TodoApp/services"
+	"TodoApp/service"
 	"TodoApp/utils"
 	"net/http"
 
@@ -29,7 +29,7 @@ func CreateTask(c *gin.Context) {
 		return
 	}
 
-	task, err := services.CreateTask(req.Title, req.Done)
+	task, err := service.CreateTask(req.Title, req.Done)
 	if err != nil {
 		HandleError(c, err)
 		return
@@ -45,7 +45,7 @@ func GetTask(c *gin.Context) {
 		return
 	}
 
-	task, err := services.GetTask(id)
+	task, err := service.GetTask(id)
 	if err != nil {
 		HandleError(c, err)
 		return
@@ -66,7 +66,7 @@ func DeleteTask(c *gin.Context) {
 		return
 	}
 
-	err = services.DeleteTask(id)
+	err = service.DeleteTask(id)
 	if err != nil {
 		HandleError(c, err)
 		return
@@ -84,7 +84,7 @@ func CompleteTask(c *gin.Context) {
 		return
 	}
 
-	_, err = services.CompleteTask(id)
+	_, err = service.CompleteTask(id)
 	if err != nil {
 		HandleError(c, err)
 		return
@@ -96,6 +96,10 @@ func CompleteTask(c *gin.Context) {
 }
 
 func ListTasks(c *gin.Context) {
-	tasks := services.ListTasks()
+	tasks, err := service.ListTasks()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
 	c.JSON(http.StatusOK, tasks)
 }

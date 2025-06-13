@@ -1,9 +1,9 @@
-package services
+package service
 
 import (
 	"TodoApp/errs"
 	"TodoApp/models"
-	"TodoApp/repositories"
+	"TodoApp/repository"
 )
 
 func CreateTask(title string, done bool) (*models.Task, error) {
@@ -16,21 +16,21 @@ func CreateTask(title string, done bool) (*models.Task, error) {
 		Done:      done,
 	}
 
-	return repositories.CreateTask(task.Title, task.Done)
+	return repository.CreateTask(task.Title, task.Done)
 }
 
 func GetTask(id int) (*models.Task, error) {
-	return repositories.GetTask(id)
+	return repository.GetTask(id)
 }
 
 func DeleteTask(id int) error {
-	return repositories.DeleteTask(id)
+	return repository	.DeleteTask(id)
 }
 
 func CompleteTask(id int) (*models.Task, error) {
-	return repositories.CompleteTask(id)
+	return repository.CompleteTask(id)
 }
 
-func ListTasks() []models.Task {
-	return repositories.ListTasks()
+func ListTasks() ([]models.Task, error) {
+	return repository.ListTasks()
 }

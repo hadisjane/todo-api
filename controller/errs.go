@@ -1,4 +1,4 @@
-package gin_rest
+package controller
 
 import (
 	"TodoApp/errs"
