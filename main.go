@@ -1,17 +1,27 @@
 package main
 
 import (
-	"TodoApp/controllers"
-	"TodoApp/controllers/gin_rest"
+	"TodoApp/controller"
+	"TodoApp/db"
+	"fmt"
 )
-// "TodoApp/controllers"
-// "TodoApp/controllers/console"
 
 
 func main() {
-	ginController := gin_rest.GinController{}
-	controllers.Run(ginController)
+	if err := db.ConnDB(); err != nil {
+		fmt.Println("Error connecting to database:", err)
+		return
+	}
+	fmt.Println("Database connection established successfully")
 
-	// consoleController := &console.ConsoleController{}
-	// controllers.Run(consoleController)
+	if err := db.InitMigrations(); err != nil {
+		fmt.Println("Error initializing migrations:", err)
+		return
+	}
+	fmt.Println("Migrations initialized successfully")
+
+	if err := controller.RunServer(); err != nil {
+		fmt.Println("Error running server:", err)
+		return
+	}
 }
