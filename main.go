@@ -6,8 +6,6 @@ import (
 	"fmt"
 
 	"github.com/joho/godotenv"
-	_ "github.com/lib/pq" // PostgreSQL driver
-	
 )
 
 
