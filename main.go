@@ -4,10 +4,19 @@ import (
 	"TodoApp/controller"
 	"TodoApp/db"
 	"fmt"
+
+	"github.com/joho/godotenv"
+	_ "github.com/lib/pq" // PostgreSQL driver
+	
 )
 
 
 func main() {
+	if err := godotenv.Load(); err != nil {
+		fmt.Println("Error loading .env file:", err)
+		return
+	}
+
 	if err := db.ConnDB(); err != nil {
 		fmt.Println("Error connecting to database:", err)
 		return
