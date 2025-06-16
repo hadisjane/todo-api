@@ -7,9 +7,9 @@ import (
 )
 
 
-func CreateTask(title string, done bool) (*models.Task, error) {
-	// First check if task with same title already exists
-	existingTasks, err := ListTasks()
+func CreateTask(userID int, title string, done bool) (*models.Task, error) {
+	// Проверяем, существует ли уже задача с таким названием у этого пользователя
+	existingTasks, err := ListUserTasks(userID)
 	if err != nil {
 		return nil, translateError(err)
 	}
@@ -20,57 +20,91 @@ func CreateTask(title string, done bool) (*models.Task, error) {
 		}
 	}
 
-	task := &models.Task{}
-	err = db.GetDB().Get(task, 
-		"INSERT INTO tasks (title, done) VALUES ($1, $2) RETURNING id, title, done, created_at", 
-		title, done)
+	// Начинаем транзакцию для атомарного создания задачи
+	tx, err := db.GetDB().Beginx()
 	if err != nil {
 		return nil, translateError(err)
 	}
+	defer tx.Rollback()
+
+	// Получаем следующий ID для задачи пользователя
+	var taskID int
+	err = tx.Get(&taskID, "SELECT next_task_id($1)", userID)
+	if err != nil {
+		return nil, translateError(err)
+	}
+
+	// Создаем задачу с указанным ID
+	task := &models.Task{}
+	err = tx.Get(task, `
+		INSERT INTO tasks (id, user_id, title, done) 
+		VALUES ($1, $2, $3, $4) 
+		RETURNING id, user_id, title, done, created_at`,
+		taskID, userID, title, done)
+
+	if err != nil {
+		return nil, translateError(err)
+	}
+
+	if err := tx.Commit(); err != nil {
+		return nil, translateError(err)
+	}
+
 	return task, nil
 }
 
-func ListTasks() ([]models.Task, error) {
+func ListUserTasks(userID int) ([]models.Task, error) {
 	var tasks []models.Task
-	err := db.GetDB().Select(&tasks, "SELECT id, title, done, created_at FROM tasks")
+	err := db.GetDB().Select(&tasks, 
+		`SELECT id, user_id, title, done, created_at 
+		FROM tasks 
+		WHERE user_id = $1 
+		ORDER BY id`,
+		userID)
 	if err != nil {
 		return nil, translateError(err)
 	}
 	return tasks, nil
-
 }
 
-func GetTask(id int) (*models.Task, error) {
+func GetUserTask(userID, taskID int) (*models.Task, error) {
 	t := models.Task{}
-	err := db.GetDB().Get(&t, "SELECT id, title, done, created_at FROM tasks WHERE id = $1", id)
+	err := db.GetDB().Get(&t, 
+		"SELECT id, user_id, title, done, created_at FROM tasks WHERE id = $1 AND user_id = $2", 
+		taskID, userID)
 	if err != nil {
 		return nil, translateError(err)
 	}
 	return &t, nil
 }
 
-func CompleteTask(id int) (*models.Task, error) {
-	task := &models.Task{}
-	err := db.GetDB().Get(task, "UPDATE tasks SET done = true WHERE id = $1 RETURNING id, title, done, created_at", id)
+func CompleteTask(userID, taskID int) (*models.Task, error) {
+	t := models.Task{}
+	err := db.GetDB().Get(&t, 
+		"UPDATE tasks SET done = true WHERE id = $1 AND user_id = $2 RETURNING id, user_id, title, done, created_at", 
+		taskID, userID)
 	if err != nil {
 		return nil, translateError(err)
 	}
-	return task, nil
+	return &t, nil
 }
 			
 
-func DeleteTask(id int) error {
-	task, err := GetTask(id)
+func DeleteUserTask(userID, taskID int) error {
+	result, err := db.GetDB().Exec(
+		"DELETE FROM tasks WHERE id = $1 AND user_id = $2", 
+		taskID, userID)
 	if err != nil {
 		return translateError(err)
-	}
-	if task == nil {
-		return errs.ErrTaskNotFound
 	}
 
-	_, err = db.GetDB().Exec("DELETE FROM tasks WHERE id = $1", id)
+	rowsAffected, err := result.RowsAffected()
 	if err != nil {
 		return translateError(err)
+	}
+
+	if rowsAffected == 0 {
+		return errs.ErrNotFound
 	}
 	return nil
 }
