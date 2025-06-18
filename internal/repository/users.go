@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"TodoApp/db"
-	"TodoApp/models"
+	"TodoApp/internal/db"
+	"TodoApp/internal/models"
 )
 
 func GetUserByUsernameAndPassword(username string, password string) (models.User, error) {

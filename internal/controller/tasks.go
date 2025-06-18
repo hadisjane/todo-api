@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"TodoApp/errs"
-	"TodoApp/middleware"
-	"TodoApp/service"
+	"TodoApp/internal/errs"
+	"TodoApp/internal/middleware"
+	"TodoApp/internal/service"
 	"net/http"
 	"strconv"
 

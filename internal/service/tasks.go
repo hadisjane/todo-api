@@ -1,9 +1,9 @@
 package service
 
 import (
-	"TodoApp/errs"
-	"TodoApp/models"
-	"TodoApp/repository"
+	"TodoApp/internal/errs"
+	"TodoApp/internal/models"
+	"TodoApp/internal/repository"
 )
 
 func CreateTask(userID int, title string, done bool) (*models.Task, error) {

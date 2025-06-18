@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"TodoApp/models"
-	"TodoApp/service"
+	"TodoApp/internal/models"
+	"TodoApp/internal/service"
 	"TodoApp/utils"
 	"net/http"
 
