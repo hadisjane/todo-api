@@ -1,11 +1,10 @@
 package repository
 
 import (
-	"TodoApp/db"
-	"TodoApp/errs"
-	"TodoApp/models"
+	"TodoApp/internal/db"
+	"TodoApp/internal/errs"
+	"TodoApp/internal/models"
 )
-
 
 func CreateTask(userID int, title string, done bool) (*models.Task, error) {
 	// Проверяем, существует ли уже задача с таким названием у этого пользователя

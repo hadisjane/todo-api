@@ -69,30 +69,19 @@ func InitMigrations() error {
 
 	log.Println("Database migrations completed successfully")
 
-	// Сбрасываем все существующие последовательности для пользователей
+	// Create sequences for users who don't have one yet
 	_, err = db.Exec(`
 	DO $$
 	DECLARE
 		r RECORD;
 	BEGIN
 		FOR r IN SELECT id FROM users LOOP
-			EXECUTE format('DROP SEQUENCE IF EXISTS task_id_seq_%s', r.id);
-			EXECUTE format('CREATE SEQUENCE IF NOT EXISTS task_id_seq_%s MINVALUE 1 START WITH 1', r.id);
+			-- Only create sequence if it doesn't exist
+			EXECUTE format('CREATE SEQUENCE IF NOT EXISTS task_id_seq_%s', r.id);
 		END LOOP;
 	END $$;`)
 	if err != nil {
-		log.Printf("Warning: failed to reset user sequences: %v", err)
+		log.Printf("Warning: failed to create user sequences: %v", err)
 	}
 	return nil
-}
-
-func Seed() error {
-	db := GetDB()
-	if db == nil {
-		return fmt.Errorf("database connection is not initialized")
-	}
-	_, err := db.Exec(`
-		INSERT INTO tasks (user_id, title, done)
-		VALUES ($1, $2, $3)`, 1, "task 1", true)
-	return err
 }

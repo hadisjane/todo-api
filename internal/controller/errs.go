@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"TodoApp/errs"
+	"TodoApp/internal/errs"
 	"errors"
 	"fmt"
 	"net/http"

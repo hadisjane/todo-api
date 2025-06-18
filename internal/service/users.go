@@ -1,9 +1,9 @@
 package service
 
 import (
-	"TodoApp/errs"
-	"TodoApp/models"
-	"TodoApp/repository"
+	"TodoApp/internal/errs"
+	"TodoApp/internal/models"
+	"TodoApp/internal/repository"
 	"TodoApp/utils"
 	"errors"
 )
@@ -14,11 +14,9 @@ func CreateUser(u models.UserRegister) error {
 		if errors.Is(err, errs.ErrNotFound) {
 			// User doesn't exist, we can proceed with creation
 		} else {
-			// Some other error occurred
 			return err
 		}
 	} else {
-		// User already exists
 		return errs.ErrUserAlreadyExists
 	}
 
@@ -36,7 +34,6 @@ func CreateUser(u models.UserRegister) error {
 }
 
 func GetUserByUsernameAndPassword(username string, password string) (models.User, error) {
-	// 1. Get user by username
 	user, err := repository.GetUserByUsername(username)
 	if err != nil {
 		if errors.Is(err, errs.ErrNotFound) {
@@ -45,7 +42,6 @@ func GetUserByUsernameAndPassword(username string, password string) (models.User
 		return models.User{}, err
 	}
 
-	// 2. Verify password
 	err = utils.VerifyPassword(user.Password, password)
 	if err != nil {
 		return models.User{}, errs.ErrIncorrectUsernameOrPassword

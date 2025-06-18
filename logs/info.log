@@ -1,0 +1,274 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:17:19 | 200 |  324.450158ms |             ::1 | POST     "/auth/login"
+[GIN] 2025/06/18 - 19:17:56 | 200 |   23.608724ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:18:02 | 200 |    3.121976ms |             ::1 | GET      "/api/todos/2"
+[GIN] 2025/06/18 - 19:18:06 | 404 |    1.686312ms |             ::1 | GET      "/api/todos/5"
+[GIN] 2025/06/18 - 19:18:12 | 400 |    1.412641ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:18:18 | 201 |  205.729211ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:18:26 | 200 |    1.331783ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:18:47 | 204 |    7.962476ms |             ::1 | DELETE   "/api/todos/1"
+[GIN] 2025/06/18 - 19:18:55 | 500 |   12.061344ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:18:58 | 201 |    3.673298ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:19:08 | 200 |    4.183644ms |             ::1 | PUT      "/api/todos/3"
+[GIN] 2025/06/18 - 19:20:02 | 200 |  114.413311ms |             ::1 | POST     "/auth/login"
+[GIN] 2025/06/18 - 19:20:23 | 200 |    8.804258ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:20:29 | 404 |    1.281077ms |             ::1 | GET      "/api/todos/5"
+[GIN] 2025/06/18 - 19:20:32 | 200 |    2.015459ms |             ::1 | GET      "/api/todos/2"
+[GIN] 2025/06/18 - 19:20:52 | 500 |    5.874183ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:20:54 | 500 |     3.40536ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:20:55 | 201 |   16.667144ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:21:07 | 400 |    6.415624ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:21:13 | 500 |    8.239618ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:23:16 | 201 |  129.164545ms |             ::1 | POST     "/auth/register"
+[GIN] 2025/06/18 - 19:23:38 | 201 |  185.990682ms |             ::1 | POST     "/auth/register"
+[GIN] 2025/06/18 - 19:24:17 | 200 |  115.545719ms |             ::1 | POST     "/auth/login"
+[GIN] 2025/06/18 - 19:24:37 | 200 |    6.600214ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:24:51 | 201 |   52.031201ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:24:54 | 400 |     4.07068ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:25:06 | 201 |    47.51357ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:25:16 | 400 |   57.724544ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:25:22 | 500 |    7.591873ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:25:24 | 500 |    5.013029ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:25:25 | 201 |     6.70021ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:28:11 | 201 |  128.129613ms |             ::1 | POST     "/auth/register"
+[GIN] 2025/06/18 - 19:28:15 | 200 |  116.968495ms |             ::1 | POST     "/auth/login"
+[GIN] 2025/06/18 - 19:28:32 | 200 |   44.836553ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:28:35 | 201 |   90.831846ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:28:42 | 201 |  127.366859ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:28:54 | 500 |   89.781715ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:33:47 | 201 |  112.656465ms |             ::1 | POST     "/auth/register"
+[GIN] 2025/06/18 - 19:33:53 | 200 |  111.843875ms |             ::1 | POST     "/auth/login"
+[GIN] 2025/06/18 - 19:34:11 | 201 |   13.397125ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:34:14 | 400 |    1.917932ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:34:19 | 201 |       6.976ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:34:29 | 400 |     4.84682ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:34:33 | 201 |    6.982539ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:34:59 | 201 |  170.774309ms |             ::1 | POST     "/auth/register"
+[GIN] 2025/06/18 - 19:35:15 | 200 |  119.503019ms |             ::1 | POST     "/auth/login"
+[GIN] 2025/06/18 - 19:35:32 | 200 |    6.342493ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:35:37 | 404 |     1.18166ms |             ::1 | GET      "/api/todos/2"
+[GIN] 2025/06/18 - 19:35:48 | 201 |   15.169132ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:36:07 | 201 |   52.374508ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:36:12 | 201 |    4.787519ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:36:19 | 200 |    1.297429ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:36:33 | 200 |   122.06519ms |             ::1 | POST     "/auth/login"
+[GIN] 2025/06/18 - 19:36:53 | 200 |     1.06723ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:37:00 | 200 |    2.743523ms |             ::1 | GET      "/api/todos/2"
+[GIN] 2025/06/18 - 19:37:07 | 204 |      3.5879ms |             ::1 | DELETE   "/api/todos/2"
+[GIN] 2025/06/18 - 19:37:14 | 200 |    1.504907ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:37:30 | 201 |   18.670046ms |             ::1 | POST     "/api/todos"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:37:41 | 400 |    3.522871ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:37:47 | 201 |    8.696535ms |             ::1 | POST     "/api/todos"
+[GIN] 2025/06/18 - 19:37:53 | 200 |    1.997229ms |             ::1 | GET      "/api/todos"
+[GIN] 2025/06/18 - 19:38:04 | 200 |    3.712791ms |             ::1 | PUT      "/api/todos/3"
+[GIN] 2025/06/18 - 19:38:13 | 200 |    2.328729ms |             ::1 | GET      "/api/todos/3"
+INFO: 2025/06/18 19:47:29 main.go:27: Database connection established successfully
+INFO: 2025/06/18 19:47:30 main.go:33: Migrations initialized successfully
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> TodoApp/internal/controller.Ping (5 handlers)
+[GIN-debug] POST   /auth/register            --> TodoApp/internal/controller.Register (5 handlers)
+[GIN-debug] POST   /auth/login               --> TodoApp/internal/controller.Login (5 handlers)
+[GIN-debug] GET    /api/todos                --> TodoApp/internal/controller.ListTasks (6 handlers)
+[GIN-debug] GET    /api/todos/:id            --> TodoApp/internal/controller.GetTask (6 handlers)
+[GIN-debug] POST   /api/todos                --> TodoApp/internal/controller.CreateTask (6 handlers)
+[GIN-debug] PUT    /api/todos/:id            --> TodoApp/internal/controller.CompleteTask (6 handlers)
+[GIN-debug] DELETE /api/todos/:id            --> TodoApp/internal/controller.DeleteTask (6 handlers)
+INFO: 2025/06/18 19:47:30 routes.go:55: Starting server on :8989
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8989
+[GIN] 2025/06/18 - 19:47:57 | 200 |    2.873595ms |             ::1 | GET      "/api/todos/3"
+[GIN] 2025/06/18 - 19:47:57 | 200 |     3.32701ms |             ::1 | GET      "/api/todos/3"
+[GIN] 2025/06/18 - 19:48:28 | 401 |     139.512µs |             ::1 | GET      "/api/todos/3"
+[GIN] 2025/06/18 - 19:48:28 | 401 |    4.550179ms |             ::1 | GET      "/api/todos/3"
