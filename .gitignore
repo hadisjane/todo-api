@@ -4,3 +4,6 @@
 
 .gitignore
 
+*.log
+*.log.*
+logs/
