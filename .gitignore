@@ -4,8 +4,3 @@
 
 .gitignore
 
-*.log
-*.log.*
-logs/
-*.sql
-*.sqlite
